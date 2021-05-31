@@ -21,7 +21,8 @@
           <div class="d-flex flex-column">
             <fa-icon class="user-icon" icon="user-circle" [matMenuTriggerFor]="menu"></fa-icon>
             <mat-menu #menu="matMenu">
-              <button mat-menu-item>User Profile</button>
+              <button [routerLink]="['/user/profile']" mat-menu-item>User Profile</button>
+              <button (click)="logout()" mat-menu-item>Logout</button>
             </mat-menu>
           </div>
         </div>

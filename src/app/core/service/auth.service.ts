@@ -1,5 +1,6 @@
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Inject, Injectable} from '@angular/core';
+import {JwtHelperService} from '@auth0/angular-jwt';
 import {Observable, of} from 'rxjs';
 import {map, tap} from 'rxjs/operators';
 
@@ -14,7 +15,9 @@ interface LoginContextInterface {
 export class AuthService {
 
   constructor(private httpClient: HttpClient,
-              @Inject('BASE_URL') private baseUrl: string) {
+              @Inject('BASE_URL') private baseUrl: string, 
+              private jwtHelperService: JwtHelperService
+              ) {
   }
 
   login(loginContext: LoginContextInterface): Observable<string> {
@@ -31,6 +34,16 @@ export class AuthService {
     }));
   }
 
+  isLoggedIn(): boolean {
+    const token = localStorage.getItem('token');
+    if(token) {
+      return !this.jwtHelperService.isTokenExpired(token);
+    }
+    
+    return false;
+    
+  }
+  
   logout(): Observable<boolean> {
     localStorage.removeItem('token');
     return of(true);

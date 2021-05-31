@@ -19,9 +19,12 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {SpinnerComponent} from '@shared/component/spinner/spinner.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SpinnerComponent
+  ],
   imports: [
     MatButtonModule,
     MatToolbarModule,
@@ -44,6 +47,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatNativeDateModule
   ],
   exports: [
+    SpinnerComponent,
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,

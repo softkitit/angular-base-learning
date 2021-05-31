@@ -59,7 +59,6 @@
     "bootstrap": "^4.5.0",
     "browser-detect": "^0.2.28",
     "core-js": "^2.6.11",
-    "masonry-layout": "^4.2.2",
     "rxjs": "^6.5.5",
     "rxjs-compat": "^6.5.5",
     "tslib": "^2.0.0",

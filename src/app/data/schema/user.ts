@@ -1,7 +1,7 @@
 export interface User {
   username: string;
-  password: string;
-  token: string;
+  email: string;
+  roles: string[];
 }
 
 export interface SignUpRequest {
@@ -10,3 +10,4 @@ export interface SignUpRequest {
   password: string;
   roles: string[]
 }
+

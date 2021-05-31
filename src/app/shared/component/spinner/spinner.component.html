@@ -1,3 +1,7 @@
-<div [hidden]="! isLoading" class="text-xs-center">
-  <h2><i class="fa fa-cog fa-spin fa-lg"></i> Henter data</h2>
+<div [hidden]="!isLoading">
+  <mat-spinner class="mx-auto">
+  </mat-spinner>
+  <h2 class="text-center">
+    {{message}}
+  </h2>
 </div>

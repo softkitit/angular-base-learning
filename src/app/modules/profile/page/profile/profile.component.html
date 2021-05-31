@@ -1,1 +1,9 @@
-<p>profile works!</p>
+<div class="mt-4">
+    <app-spinner class="loader" message="Loading Profile Information" [isLoading]="isLoading"></app-spinner>
+
+    <div *ngIf="userInfo | async as info">
+        <app-user-profile [userInfo]="info"></app-user-profile>
+    </div>
+
+    
+</div>
