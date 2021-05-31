@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="toolbar">
+    <mat-toolbar color="primary">
+      <div class="w-100 d-flex justify-content-between">
+        <div class="branding spacer center d-none d-sm-inline d-md-none">
+          Angular Base Learning
+        </div>
+        <div class="branding spacer d-none d-md-inline">
+          Angular Base Learning
+        </div>
+        <div class="d-none d-md-inline">
+          <button mat-button class="nav-button" *ngFor="let item of navItems" [routerLink]="item.link"
+            routerLinkActive="active">
+            {{ item.title }}
+          </button>
+        </div>
+        <div class="d-flex justify-content-between">
+          <mat-slide-toggle class="theme-switcher float-right" [checked]="isDarkTheme$ | async" (change)="toggleTheme($event.checked)">
+            {{(isDarkTheme$ | async) ? "Dark Theme" : "Light Theme"}}
+          </mat-slide-toggle>
+          <div class="d-flex flex-column">
+            <fa-icon class="user-icon" icon="user-circle" [matMenuTriggerFor]="menu"></fa-icon>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>User Profile</button>
+            </mat-menu>
+          </div>
+        </div>
+
+      </div>
+    </mat-toolbar>
+  </div>
+</div>
