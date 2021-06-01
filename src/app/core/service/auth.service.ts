@@ -22,6 +22,8 @@ export class AuthService {
 
   login(loginContext: LoginContextInterface): Observable<string> {
 
+    localStorage.removeItem("token");
+    
     const params = new URLSearchParams();
     params.append('username', loginContext.username);
     params.append('password', loginContext.password);

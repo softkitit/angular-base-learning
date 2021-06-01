@@ -40,6 +40,8 @@ export class RegisterComponent implements OnDestroy {
 
   signup() {
     if (this.signupForm.valid) {
+      localStorage.removeItem("token");
+
       this.userService.signup(this.signupForm.value)
         .subscribe(value => {
           this.router.navigate([ '/auth/login' ]);
